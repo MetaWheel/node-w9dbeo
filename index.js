@@ -90,3 +90,19 @@ await txnResp.wait()
 
 // We're done, print the transaction hash, and open it up in your block explorer
 console.log('transaction hash:', txnResp.hash)
+const wallet = sequence.getWallet()
+const walletAddress = await wallet.getAddress()
+
+console.log(walletAddress)
+// # => '0xabcd....'
+const wallet = sequence.getWallet()
+wallet.openWallet()
+const wallet = sequence.getWallet()
+
+console.log('chainId:', await wallet.getChainId())
+
+const provider = wallet.getProvider()
+console.log('provider.getChainId()', await provider.getChainId())
+
+const signer = wallet.getSigner()
+console.log('signer.getChainId()', await signer.getChainId())

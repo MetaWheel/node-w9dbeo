@@ -20,3 +20,8 @@ const wallet = sequence.initWallet('polygon')
 const connectDetails = await wallet.connect()
 
 console.log('=> connected?', connectDetails.connected)
+const wallet = sequence.getWallet()
+const walletAddress = await wallet.getAddress()
+
+console.log(walletAddress)
+// # => '0xabcd....'
